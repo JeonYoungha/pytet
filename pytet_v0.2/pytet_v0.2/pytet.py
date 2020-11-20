@@ -53,7 +53,7 @@ iScreenDw = 4
 top = 0
 rotate = 0
 a = random.randint(0, 6)
-block = [blk1, blk2 ,blk3, blk4, blk5 ,blk6 ,blk7]
+block = [blk, blk2 ,blk3, blk4, blk5 ,blk6 ,blk7]
 
 left = iScreenDw + iScreenDx//2 - 2
 
