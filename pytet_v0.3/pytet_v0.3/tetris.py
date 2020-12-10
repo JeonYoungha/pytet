@@ -81,24 +81,23 @@ class Tetris():
 
     def deleteFullLines(self):
         delline = self.currBlk.get_dy()
-        if  self.iScreenDy <= self.t + self.currBlk.get_dy():
+        if self.iScreenDy <= self.t + self.currBlk.get_dy():
             delline = self.iScreenDy - self.t
 
-        del = 0
+        delt = 0
 
         arrayScreen = self.createArrayScreen()
         nScreen = Matrix(arrayScreen)
-        zero = Screen.clip(0, 0, 1, nScreen.get_dx())
+        zero = nScreen.clip(0, 0, 1, nScreen.get_dx())
 
         for i in range(delline - 1, -1, -1):
-            k = self.t + i + del
+            k = self.t + i + delt
             line = self.oScreen.clip(k, 0, k + 1, self.oScreen.get_dx())
             if line.sum() == self.oScreen.get_dx():
                 temp = self.oScreen.clip(0, 0, k, self.oScreen.get_dx())
                 self.oScreen.paste(zero, 0, 0)
-		self.oScreen.paste(temp, 1, 0)
-                del += 1
-		
+                self.oScreen.paste(temp, 1, 0)
+                delt += 1
         return self.oScreen
 
     def accept(self, key):
@@ -163,3 +162,5 @@ class Tetris():
             self.oScreen = Matrix(self.iScreen)
 		
         return self.state
+
+### end of class Tetris():
