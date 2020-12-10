@@ -58,7 +58,7 @@ class Tetris():
         self.oScreen = Matrix(self.iScreen)
         self.justStarted = True
         self.t = 0
-        self.lft = Tetris.iScreenDw + self.iScreenDx // 2 - 2
+        self.lft = (Tetris.iScreenDw + self.iScreenDx // 2) - 2
         self.state = TetrisState.NewBlock
 
         return
